@@ -1,0 +1,25 @@
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Application<br> Login Page</h2>
+       <p>Login or register from here to access.</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-9 col-sm-12">
+        <div class="login-form">
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+       
+          <form ng-submit="userLogin(login,event)">
+             <div class="form-group">
+                <label>Username / Email</label>
+                <input type="text" class="form-control" ng-model="login.uname" placeholder="User Name">
+             </div>
+             <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="login.pass" placeholder="Password">
+             </div>
+             <input type="submit" value="Login" class="btn btn-black">
+          </form>
+       </div>
+    </div>
+ </div>
